@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+header {
+    box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.07) !important;
+}
+
+nav ul {
+    display: flex !important;
+    list-style: none !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 30px !important;
+}
+
+nav ul li {
+    font-size: 18px !important;
+    transition: all 0.3s !important;
+}
+
+nav ul li:hover {
+    transform: translateY(-3px) !important;
+}
+
+nav ul li:active {
+    text-underline-offset: 3px !important;
+}
+
+.nav-link {
+    color: #141414 !important;
+}
+
+main {
+    width: 98vw !important;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 175px;
+}
+
+.header {
+    width: 98vw !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 60px;
+    text-align: center;
+}
+
+.header p {
+    width: 35%;
+    text-align: center;
+    color: var(--color-black);
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.conteneur {
+    width: 100%;
+    min-height: 60vh;
+    padding-top: 50px;
+}
+
+.list {
+    width: 100vw;
+    min-height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 30px 30px;
+    justify-content: space-evenly;
+}
+
+.list div {
+    max-width: 600px;
+    height: 300px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+    flex: 1 1 600px;
+    background-color: #eee;
+}
+
+.serie {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.serie img {
+    height: 270px;
+    border-radius: 15px;
+}
+
+.serie p {
+    margin: 12px
+}
+
+.serie p span {
+    font-weight: 600;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px -15px 80px rgba(0, 0, 0, 0.07);
+    padding: 5px;
+}
+
+@media screen and (min-width: 480px){
+
+}
