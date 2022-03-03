@@ -151,13 +151,14 @@ main {
 .label_input {
     transition: all 0.3s;
     margin-top: 10px;
+    text-align: center;
 }
 
 .label_input:hover {
     transform: translateY(-3px);
 }
 
-.label_input div input {
+.label_inputinput {
     border-radius: 7px;
 }
 

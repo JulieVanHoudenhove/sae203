@@ -18,20 +18,12 @@
             <form action="reponse_recherche.php" method="POST" data-parsley-validate>
             <p>
                 <div  class="label_input">
-                    <div>
                         <label class="label" for="duree_mini">Durée minimum (en minutes)</label>
-                    </div>
-                    <div>
                         <input type="text" id="duree_mini" name="duree_mini" value="10" data-parsley-type="number">
-                    </div>
                 </div>
                 <div  class="label_input">
-                    <div>
                         <label class="label" for="duree_maxi">Durée maximum (en minutes)</label>
-                    </div>
-                    <div>
                         <input type="text" id="duree_maxi" name="duree_maxi" value="100" data-parsley-type="number">
-                    </div>
                 </div>
                 <div class="submit label_input">
                     <input type="submit" value="Rechercher" class="rechercher"><br><br>
@@ -51,18 +43,16 @@
             <p>Vous pouvez aussi rechercher en fonction du réalisateur</p>
             <form action="reponse_recherche.php">
                 <p>
-                    <div>
-                        <label class="label" for="real">Entrez un nom de réalisateur :</label>
+                    <div  class="label_input">
+                            <label class="label" for="real">Entrez un nom de réalisateur :</label>
+                            <input type="search" list="realisateurs" id="real" name="real" />
                     </div>
-                    <div>
-                        <input type="search" list="realisateurs" id="real" name="real" />
-                    </div>
-                    <div class="submit">
+                    <div class="submit label_input">
                         <input class="rechercher" type="submit" value="Rechercher">
                     </div>
                 </p>
 
-        </form>
+            </form>
         </div>
     </section>
     <a href="index.php">Retour</a>
