@@ -5,7 +5,7 @@
 ?>
 
 <header>
-  <nav class="navbar navbar-expand-lg navbar-light" style="color: #141414; background-color: #fff;" fixed-top">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="color: #141414; background-color: #fff;" fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.php">
       <img src="images/netflix_serie.png" alt="" width="150" height="auto"></a>

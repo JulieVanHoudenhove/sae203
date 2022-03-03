@@ -16,6 +16,10 @@ header {
 
 /* NAVBAR */
 
+nav {
+    box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.07) !important;
+}
+
 nav ul {
     display: flex !important;
     list-style: none !important;
@@ -125,6 +129,7 @@ main {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    margin-top: 70px;
 }
 
 .form {
@@ -139,14 +144,45 @@ main {
 }
 
 .label {
-    text-align: center !important;
+    display: flex;
+    justify-content: center;
+}
+
+.label_input {
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.label_input:hover {
+    transform: translateY(-3px);
+}
+
+.label_input div input {
+    border-radius: 7px;
 }
 
 .submit {
     justify-content: center;
     display: flex;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 15px;
+}
+
+.rechercher {
+    text-decoration: none;
+    border: solid 1px red;
+    background-color: transparent;
+    transition: 0.3s;
+    color: red;
+    height: 40px;
+    text-align: center;
+    border-radius: 7px;
+    padding: 0 10px 2px 10px !important;
+}
+
+.rechercher:hover {
+    background-color: red !important;
+    color: white !important;
 }
 
 
@@ -161,7 +197,14 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
+    main {
+        padding-top: 100px;
+    }
     #form {
         display: block;
+    }
+    .form {
+        margin-top: 50px;
+        padding: 0 20px 0 20px;
     }
 }

@@ -2,7 +2,7 @@
     require('header.php');
 ?>
 
-<title>Recherche</title>
+<title>Accueil SAE203</title>
 </head>
 <body>
 <?php require('nav.php'); ?>
@@ -17,7 +17,7 @@
             <p>Vous pouvez rechercher en fonction de la durée des épisodes</p>
             <form action="reponse_recherche.php" method="POST" data-parsley-validate>
             <p>
-                <div>
+                <div  class="label_input">
                     <div>
                         <label class="label" for="duree_mini">Durée minimum (en minutes)</label>
                     </div>
@@ -25,7 +25,7 @@
                         <input type="text" id="duree_mini" name="duree_mini" value="10" data-parsley-type="number">
                     </div>
                 </div>
-                <div>
+                <div  class="label_input">
                     <div>
                         <label class="label" for="duree_maxi">Durée maximum (en minutes)</label>
                     </div>
@@ -33,7 +33,7 @@
                         <input type="text" id="duree_maxi" name="duree_maxi" value="100" data-parsley-type="number">
                     </div>
                 </div>
-                <div class="submit">
+                <div class="submit label_input">
                     <input type="submit" value="Rechercher" class="rechercher"><br><br>
                 </div>
             </p>
@@ -58,13 +58,14 @@
                         <input type="search" list="realisateurs" id="real" name="real" />
                     </div>
                     <div class="submit">
-                        <input class="btn btn-primary" type="submit" value="Rechercher" id="submit">
+                        <input class="rechercher" type="submit" value="Rechercher">
                     </div>
                 </p>
 
         </form>
         </div>
     </section>
+    <a href="index.php">Retour</a>
 
 <?php require('footer.php'); ?>
 </body>

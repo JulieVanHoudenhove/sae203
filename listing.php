@@ -87,6 +87,7 @@
         </div>
 
     </section>
+    <a href="index.php">Retour</a>
     
 </main>
 <?php require('footer.php'); ?>
