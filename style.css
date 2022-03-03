@@ -158,7 +158,7 @@ main {
     transform: translateY(-3px);
 }
 
-.label_inputinput {
+.label_input input {
     border-radius: 7px;
 }
 
