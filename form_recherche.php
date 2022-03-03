@@ -2,7 +2,7 @@
     require('header.php');
 ?>
 
-<title>Accueil SAE203</title>
+<title>Recherche</title>
 </head>
 <body>
 <?php require('nav.php'); ?>
