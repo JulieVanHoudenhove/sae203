@@ -13,6 +13,9 @@ header {
     box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.07) !important;
 }
 
+
+/* NAVBAR */
+
 nav ul {
     display: flex !important;
     list-style: none !important;
@@ -66,6 +69,9 @@ main {
     font-size: 16px;
 }
 
+
+/* CATALOGUE */
+
 .conteneur {
     width: 100%;
     min-height: 60vh;
@@ -111,6 +117,41 @@ main {
     font-weight: 600;
 }
 
+
+/* RECHERCHES */
+
+#form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.form {
+    display: flex !important;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form p {
+    text-align: center;
+}
+
+.label {
+    text-align: center !important;
+}
+
+.submit {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+
+/* FOOTER */
+
 footer {
     display: flex;
     justify-content: center;
@@ -119,6 +160,8 @@ footer {
     padding: 5px;
 }
 
-@media screen and (min-width: 480px){
-
+@media screen and (max-width: 480px) {
+    #form {
+        display: block;
+    }
 }

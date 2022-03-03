@@ -17,8 +17,8 @@
           <li class="nav-item" <?php if($page == "index.php"){echo 'class="active"';} ?>>
             <a class="nav-link" aria-current="page" href="index.php"><i class="bi bi-house"></i>Accueil</a>
           </li>
-          <li class="nav-item" <?php if($page == "catalogue.php"){echo 'class="active"';} ?>>
-            <a class="nav-link" href="catalogue.php">Catalogue</a>
+          <li class="nav-item" <?php if($page == "listing.php"){echo 'class="active"';} ?>>
+            <a class="nav-link" href="listing.php">Catalogue</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Privé</a>
