@@ -12,7 +12,7 @@
     </section>
     <section class="conteneur">
         <div class="list">
-            <div class="serie">
+            <div class="serie stranger_things">
                 <img src="images/stranger_things.jpg" alt=" Affiche de Stranger Things">
                 <p>
                     <span>Nom :</span> Stranger Things<br>
@@ -24,7 +24,7 @@
                     <span>Résumé :</span> Quand un jeune garçon disparaît, une petite ville découvre une affaire mystérieuse, des expériences secrètes, des forces surnaturelles terrifiantes... et une fillette.<br>
                 </p>
             </div>
-            <div class="serie" >
+            <div class="serie mortel" >
             <img src="images/mortel.jpg" alt="Affiche de Mortel">
                 <p>
                     <span>Nom :</span> Mortel<br>
@@ -36,7 +36,7 @@
                     <span>Résumé :</span> Après avoir conclu un marché avec un être surnaturel, deux lycéens doivent unir les super-pouvoirs qu'ils viennent d'acquérir pour retrouver un assassin.<br>
                 </p>
             </div>
-            <div class="serie">
+            <div class="serie lupin">
             <img src="images/lupin.jpg" alt="Affiche de Lupin">
                 <p>
                     <span>Nom :</span> Lupin<br>
@@ -48,7 +48,7 @@
                     <span>Résumé :</span> Inspiré par les aventures d'Arsène Lupin, le gentleman cambrioleur Assane Diop décide de venger son père d'une terrible injustice.<br>
                 </p>
             </div>
-            <div class="serie">
+            <div class="serie 13_reasons_why">
             <img src="images/13_reasons_why.jpg" alt="Affiche de 13 Reasons Why">
                 <p>
                     <span>Nom :</span> 13 Reasons Why<br>
@@ -60,7 +60,7 @@
                     <span>Résumé :</span> Le jeune Clay Jensen se retrouve au centre d'une série de secrets déchirants qui prennent un tour tragique après le suicide d'une camarade de classe.<br>
                 </p>
             </div>
-            <div class="serie">
+            <div class="serie how_to_sell_drugs_online">
             <img src="images/how_to_sell_drugs_online_fast.jpg" alt="Affiche de How to Sell Drugs Online (Fast)">
                 <p>
                     <span>Nom :</span> How to Sell Drugs Online (Fast)<br>
@@ -72,7 +72,7 @@
                     <span>Résumé :</span> Pour reconquérir son ex, un ado fou d'informatique se met à vendre de l'ecstasy en ligne, et devient l'un des plus gros dealers d'Europe... sans quitter sa chambre.<br>
                 </p>
             </div>
-            <div class="serie">
+            <div class="serie warrior_nun">
             <img src="images/warrior_nun.jpg" alt="Affiche de Warrior Nun">
                 <p>
                     <span>Nom :</span> Warrior Nun<br>
@@ -87,7 +87,7 @@
         </div>
 
     </section>
-    <a href="index.php">Retour</a>
+    <div class="retour"><a href="index.php">Retour</a></div>
     
 </main>
 <?php require('footer.php'); ?>
