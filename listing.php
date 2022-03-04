@@ -8,7 +8,7 @@
 <?php require('nav.php'); ?>
 <main>
     <section class="header">
-    <h1 class="load-hidden">Toutes les séries originales Netflix</h1>
+    <h1>Toutes les séries originales Netflix</h1>
     <p>Qu'ont-ils créé ?</p> 
     </section>
     <section class="conteneur">

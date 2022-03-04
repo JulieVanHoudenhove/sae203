@@ -5,7 +5,7 @@
 <?php require('nav.php'); ?>
 <main>
 <section class="header">
-    <h1 class="load-hidden">Bienvenue sur <img class="n" src="images/n.png" alt="Logo N de Netflix"> série</h1>
+    <h1>Bienvenue sur <img class="n" src="images/n.png" alt="Logo N de Netflix"> série</h1>
     <p>Le site qui répertorie toutes les séries originales Netflix</p> 
     </section>
     <section class="sortie">

@@ -1,1 +1,0 @@
-const sliders = document.querySelector("carouselbox")

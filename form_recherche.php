@@ -9,8 +9,8 @@
 
 <main>
     <section class="header">
-    <h1>Rechercher parmis les séries originales Netflix</h1>
-    <p>Que cherchez-vous ?</p>
+    <h1>Voici le résultat de votre recherche</h1>
+    <p>Trouvez votre bonheur</p> 
     </section>
     <section id="form">
         <div class="form">
