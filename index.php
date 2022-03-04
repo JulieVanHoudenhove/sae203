@@ -9,7 +9,7 @@
     <p>Le site qui répertorie toutes les séries originales Netflix</p> 
     </section>
     <section class="sortie">
-        <p>Les dernières sortie</p>
+        <p>Les dernières sorties</p>
         <div>
             <a href="listing.php"><img src="images/arcane.jpg" alt="Affiche d'Arcane"></a>
             <a href="listing.php"><img src="images/squid_game.jpg" alt="Affiche de Squid Game"></a>
