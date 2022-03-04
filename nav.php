@@ -8,7 +8,7 @@
   <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="color: #141414; background-color: #fff;" fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.php">
-      <img src="images/netflix_serie.png" alt="" width="150" height="auto"></a>
+      <img src="images/netflix_serie.png" alt="logo Netflix Série" width="100" height="auto"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       </button>

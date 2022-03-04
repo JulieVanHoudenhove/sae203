@@ -41,7 +41,7 @@
                 <option value="Simon Barry">
             </datalist>
             <p>Vous pouvez aussi rechercher en fonction du réalisateur</p>
-            <form action="reponse_recherche.php">
+            <form action="reponse_recherche1.php" method="POST">
                 <p>
                     <div  class="label_input">
                             <label class="label" for="real">Entrez un nom de réalisateur :</label>

@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: Poppins, sans-serif;
 }
 
 body {
@@ -10,14 +10,14 @@ body {
 }
 
 header {
-    box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.07) !important;
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.07) !important;
 }
 
 
 /* NAVBAR */
 
 nav {
-    box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.07) !important;
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.07) !important;
 }
 
 nav ul {
@@ -30,7 +30,7 @@ nav ul {
 
 nav ul li {
     font-size: 18px !important;
-    transition: all 0.3s !important;
+    transition: all .3s !important;
 }
 
 nav ul li:hover {
@@ -68,7 +68,7 @@ main {
 .header p {
     width: 35%;
     text-align: center;
-    color: black;
+    color: #000;
     margin-top: 20px;
     font-size: 16px;
 }
@@ -95,7 +95,7 @@ main {
 .sortie div img {
     height: 270px;
     border-radius: 15px;
-    box-shadow: 0px 0px 174px -57px rgba(0, 0, 0, 1);
+    box-shadow: 0 0 174px -57px rgba(0, 0, 0, 1);
 }
 
 
@@ -215,7 +215,7 @@ main {
 
 .rechercher:hover {
     background-color: red !important;
-    color: white !important;
+    color: #fff !important;
 }
 
 
@@ -230,16 +230,16 @@ main {
 
 .retour a {
     text-decoration: none !important;
-    color: #939393;
+    color: #707070;
     border-radius: 7px;
-    border: solid 1px #939393;
+    border: solid 1px #707070;
     background-color: transparent;
     transition: 0.3s;
     padding: 4px 10px 4px 10px;
 }
 
 .retour a:hover {
-    background-color: #939393;
+    background-color: #707070;
     color: white;
 }
 
@@ -255,10 +255,9 @@ footer {
     margin-top: 50px;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width:480px) {
     .header p {
         width: 90%;
-        /* padding: 5px; */
     }
     main {
         padding-top: 140px;
