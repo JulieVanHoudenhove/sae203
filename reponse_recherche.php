@@ -27,8 +27,8 @@
     }
     ?>
     <section class="header">
-    <h1>Toutes les séries originales Netflix</h1>
-    <p>Qu'ont-ils créé ?</p> 
+    <h1>Voici le résultat de votre recherche</h1>
+    <p>Trouvez votre bonheur</p> 
     </section>
     <section class="conteneur">
         <div class="list">
