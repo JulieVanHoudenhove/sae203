@@ -22,7 +22,7 @@ if ( empty($_POST['real']) ){
     <section class="conteneur">
         <div class="list">
             <div class="serie">
-                <img src="images/stranger_things.jpg" alt=" Affiche de Stranger Things">
+                <img src="images/uploads/stranger_things.jpg" alt=" Affiche de Stranger Things">
                 <p>
                     <span>Nom :</span> Stranger Things<br>
                     <span>Date :</span> 2016<br>
@@ -34,7 +34,7 @@ if ( empty($_POST['real']) ){
                 </p>
             </div>
             <div class="serie" >
-            <img src="images/mortel.jpg" alt="Affiche de Mortel">
+            <img src="images/uploads/mortel.jpg" alt="Affiche de Mortel">
                 <p>
                     <span>Nom :</span> Mortel<br>
                     <span>Date :</span> 2019<br>
@@ -46,7 +46,7 @@ if ( empty($_POST['real']) ){
                 </p>
             </div>
             <div class="serie">
-            <img src="images/lupin.jpg" alt="Affiche de Lupin">
+            <img src="images/uploads/lupin.jpg" alt="Affiche de Lupin">
                 <p>
                     <span>Nom :</span> Lupin<br>
                     <span>Date :</span> 2021<br>
@@ -58,7 +58,7 @@ if ( empty($_POST['real']) ){
                 </p>
             </div>
             <div class="serie">
-            <img src="images/13_reasons_why.jpg" alt="Affiche de 13 Reasons Why">
+            <img src="images/uploads/13_reasons_why.jpg" alt="Affiche de 13 Reasons Why">
                 <p>
                     <span>Nom :</span> 13 Reasons Why<br>
                     <span>Date :</span> 2017<br>
@@ -70,7 +70,7 @@ if ( empty($_POST['real']) ){
                 </p>
             </div>
             <div class="serie">
-            <img src="images/how_to_sell_drugs_online_fast.jpg" alt="Affiche de How to Sell Drugs Online (Fast)">
+            <img src="images/uploads/how_to_sell_drugs_online_fast.jpg" alt="Affiche de How to Sell Drugs Online (Fast)">
                 <p>
                     <span>Nom :</span> How to Sell Drugs Online (Fast)<br>
                     <span>Date :</span> 2019<br>
@@ -82,7 +82,7 @@ if ( empty($_POST['real']) ){
                 </p>
             </div>
             <div class="serie">
-            <img src="images/warrior_nun.jpg" alt="Affiche de Warrior Nun">
+            <img src="images/uploads/warrior_nun.jpg" alt="Affiche de Warrior Nun">
                 <p>
                     <span>Nom :</span> Warrior Nun<br>
                     <span>Date :</span> 2020<br>

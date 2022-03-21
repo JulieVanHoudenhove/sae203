@@ -14,23 +14,10 @@
     <section class="conteneur">
         <div class="list">
             <?php
-            $mabd = new PDO('mysql:host=localhost;dbname=sae203;charset=UTF8;', 'sae203', 'Sae203');
-            $mabd->query('SET NAMES utf8;');
-            $req = "SELECT * FROM serie INNER JOIN realisateur ON serie._real_id = realisateur.real_id";
-            $resultat = $mabd->query($req);
-            foreach ($resultat as $value) {
-                echo '<div class="serie">' ;
-                echo '<img src="images/'.$value['serie_photo']. '" alt="Affiche'.$value['serie_nom'].'">';
-                echo '<p>';
-                echo '<span>Nom :</span> '.$value['serie_nom'].'<br>';
-                echo '<span>Date :</span> '.$value['serie_date'].'<br>';
-                echo '<span>Nombre de saison :</span> '.$value['serie_saison'].'<br>';
-                echo '<span>Durée par épisode :</span> environ '.$value['serie_duree'].'<br>';
-                echo '<span>Acteurs principaux :</span> '.$value['serie_distrib'].'<br>';
-                echo '<span  id="'.$value['serie_id'].'">Résumé :</span> '.$value['serie_resume'].'<br>';
-                echo '</p>';
-                echo '</div>';
-            }
+            require('lib_crud.inc.php');
+            $mabd = connexionBD();
+            afficherCatalogue($mabd);
+            deconnexionBD($mabd);
             ?>
         </div>
     </section>
