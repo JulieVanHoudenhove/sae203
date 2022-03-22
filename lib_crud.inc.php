@@ -340,6 +340,71 @@
         } 
     }
 
+    // affichage des resultats de recherche
+    function afficherResultatRecherche1($mabd) {
+        $real=$_POST['real'];
+        $t=explode(' ', $real);
+        $req = "SELECT * FROM serie 
+                INNER JOIN realisateur 
+                ON serie._real_id = realisateur.real_id
+                WHERE real_nom LIKE '%".$t[0]."%' OR 
+                real_nom LIKE '%".$t[1]."%' OR
+                real_prenom LIKE '%".$t[0]."%' OR 
+                real_prenom LIKE '%".$t[1]."%'" ;
+                //echo '<p>'.$req.'</p>';
+        try {
+            $resultat = $mabd->query($req);
+        } catch (PDOException $e) {
+            // s'il y a une erreur, on l'affiche
+            echo '<p>Erreur : ' . $e->getMessage() . '</p>';
+            die();
+        }
+        foreach ($resultat as $value) {
+            echo '<div class="serie">' ;
+            echo '<img src="images/uploads/'.$value['serie_photo']. '" alt="Affiche'.$value['serie_nom'].'">';
+            echo '<p>';
+            echo '<span>Nom :</span> '.$value['serie_nom'].'<br>';
+            echo '<span>Date :</span> '.$value['serie_date'].'<br>';
+            echo '<span>Nombre de saison :</span> '.$value['serie_saison'].'<br>';
+            echo '<span>Durée par épisode :</span> environ '.$value['serie_duree'].'<br>';
+            echo '<span>Acteurs principaux :</span> '.$value['serie_distrib'].'<br>';
+            echo '<span>Réalisateur :</span> '.$value['real_prenom'].' '.$value['real_nom'].', '.$value['real_age'].' ans, '.$value['real_natio'].'<br>';
+            echo '<span>Résumé :</span> '.$value['serie_resume'].'<br>';
+            echo '</p>';
+            echo '</div>';
+        }
+    }
+
+        // affichage des resultats de recherche
+        function afficherResultatRecherche($mabd) {
+            $req = "SELECT * FROM serie
+                    INNER JOIN realisateur
+                    ON serie._real_id = realisateur.real_id
+                    WHERE serie_duree BETWEEN ".$_POST['duree_mini']." AND ".$_POST['duree_maxi']."";
+                    //echo '<p>'.$req.'</p>';
+            try {
+                $resultat = $mabd->query($req);
+            } catch (PDOException $e) {
+                // s'il y a une erreur, on l'affiche
+                echo '<p>Erreur : ' . $e->getMessage() . '</p>';
+                die();
+            }
+            foreach ($resultat as $value) {
+                echo '<div class="serie">' ;
+                echo '<img src="images/uploads/'.$value['serie_photo']. '" alt="Affiche'.$value['serie_nom'].'">';
+                echo '<p>';
+                echo '<span>Nom :</span> '.$value['serie_nom'].'<br>';
+                echo '<span>Date :</span> '.$value['serie_date'].'<br>';
+                echo '<span>Nombre de saison :</span> '.$value['serie_saison'].'<br>';
+                echo '<span>Durée par épisode :</span> environ '.$value['serie_duree'].'<br>';
+                echo '<span>Acteurs principaux :</span> '.$value['serie_distrib'].'<br>';
+                echo '<span>Réalisateur :</span> '.$value['real_prenom'].' '.$value['real_nom'].', '.$value['real_age'].' ans, '.$value['real_natio'].'<br>';
+                echo '<span>Résumé :</span> '.$value['serie_resume'].'<br>';
+                echo '</p>';
+                echo '</div>';
+            }
+        }
+
 
   // déconnexion de la base de données
   function deconnexionBD(&$mabd) {

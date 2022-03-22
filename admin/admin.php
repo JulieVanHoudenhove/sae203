@@ -1,7 +1,7 @@
 <?php require('../header.php'); ?>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../parsley.css">
-    <title>Accueil SAE203</title>
+    <title>Administration | N Série</title>
 </head>
 <body>
 <?php require('../nav.admin.php'); ?>

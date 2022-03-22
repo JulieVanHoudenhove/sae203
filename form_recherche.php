@@ -2,7 +2,7 @@
     require('header.php');
 ?>
 
-<title>Accueil SAE203</title>
+<title>Rechercher | N Série</title>
 </head>
 <body>
 <?php require('nav.php'); ?>
@@ -47,7 +47,7 @@
                 <p>
                     <div  class="label_input">
                             <label class="label" for="real">Entrez un nom de réalisateur :</label>
-                            <input class="text_input" type="search" id="real" list="realisateurs" autocomplete="off" />
+                            <input class="text_input" type="search" id="real" name="real" list="realisateurs" autocomplete="off" />
                     </div>
                     <div class="submit label_input">
                         <input class="rechercher" type="submit" value="Rechercher">

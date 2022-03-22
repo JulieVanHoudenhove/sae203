@@ -1,5 +1,5 @@
 <?php require('header.php'); ?>
-    <title>Accueil SAE203</title>
+    <title>Accueil | N Série</title>
 </head>
 <body>
 <?php require('nav.php'); ?>

@@ -1,7 +1,7 @@
 <?php
     require('header.php');
 ?>
-    <title>Accueil SAE203</title>
+    <title>Catalogue | N Série</title>
 </head>
 <body>
 
