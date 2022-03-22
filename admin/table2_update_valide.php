@@ -24,5 +24,7 @@
 	        modifierRL($co, $id, $nom, $prenom, $natio, $age);
 	        deconnexionBD($co);
 	    ?>
+		
+<?php require('../footer.php'); ?>
 	</body>
 </html>

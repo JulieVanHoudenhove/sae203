@@ -18,14 +18,16 @@
         //var_dump($album);
         deconnexionBD($co);
     ?>
-    <form action="table2_update_valide.php" method="POST" enctype="multipart/form-data" >
+    <form  class="add_serie" action="table2_update_valide.php" method="POST" enctype="multipart/form-data" >
         <input type="hidden" name="num" value="<?= $id; ?>" />
-        Nom : <input type="text" name="nom" value="<?php echo $album['real_nom']; ?>" required/><br />
-        Prénom : <input type="text" name="prenom" value="<?php echo $album['real_prenom']; ?>" required/><br />
-        Nationalité : <input type="text" name="natio" value="<?= $album['real_natio']; ?>" required/><br />
-        Âge : <input type="number" name="age" min="0" max="200" value="<?= $album['real_age']; ?>" required/><br />
+        <div class="form_serie">Nom : <input class="input" type="text" name="nom" value="<?php echo $album['real_nom']; ?>" required/><br /></div>
+        <div class="form_serie">Prénom : <input class="input" type="text" name="prenom" value="<?php echo $album['real_prenom']; ?>" required/><br /></div>
+        <div class="form_serie">Nationalité : <input class="input" type="text" name="natio" value="<?= $album['real_natio']; ?>" required/><br /></div>
+        <div class="form_serie">Âge : <input class="input" type="number" name="age" min="0" max="200" value="<?= $album['real_age']; ?>" required/><br /></div>
 
-        <input type="submit" value="Modifier" />
+        <div class="submit"><input class="ajouter" type="submit" value="Modifier" /></div>
     </form>
+    
+<?php require('../footer.php'); ?>
 </body>
 </html>

@@ -33,19 +33,21 @@
         </div>
         <div class="form">
             <datalist id="realisateurs">
-                <option value="Les frères Duffer">
-                <option value="Frédéric Garcia">
-                <option value="George Kay">
-                <option value="Brian Yorkey">
-                <option value="Philipp Käßbohrer">
-                <option value="Simon Barry">
+                <?php
+                // On va afficher ici la datalist
+                require 'lib_crud.inc.php';
+                $co=connexionBD();
+                genererDatalistAuteurs($co);
+                deconnexionBD($co);
+                ?>
             </datalist>
+
             <p>Vous pouvez aussi rechercher en fonction du réalisateur</p>
             <form action="reponse_recherche1.php" method="POST">
                 <p>
                     <div  class="label_input">
                             <label class="label" for="real">Entrez un nom de réalisateur :</label>
-                            <input class="text_input" type="search" list="realisateurs" id="real" name="real" />
+                            <input class="text_input" type="search" id="real" list="realisateurs" autocomplete="off" />
                     </div>
                     <div class="submit label_input">
                         <input class="rechercher" type="submit" value="Rechercher">

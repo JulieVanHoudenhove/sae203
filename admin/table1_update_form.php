@@ -18,25 +18,27 @@
         //var_dump($album);
         deconnexionBD($co);
     ?>
-    <form action="table1_update_valide.php" method="POST" enctype="multipart/form-data" >
+    <form class="add_serie" action="table1_update_valide.php" method="POST" enctype="multipart/form-data" >
         <input type="hidden" name="num" value="<?= $id; ?>" />
-        Nom : <input type="text" name="nom" value="<?php echo $album['serie_nom']; ?>" required/><br />
-        Année : <input type="number" name="annee" min="1900" max="3000" value="<?= $album['serie_date']; ?>" required /><br />
-        Nombre de saison : <input type="number" name="saison" value="<?= $album['serie_saison']; ?>" required /><br />
-        Durée des épisodes (en min) : <input type="number" name="duree" value="<?= $album ['serie_duree']; ?>" required /><br />
-        Résumé : <textarea name="resume" required><?= $album['serie_resume']; ?></textarea><br />
-        Classification : <input type="number" name="pegi" value="<?= $album ['serie_pegi']; ?>" required /><br />
-        Photo : <input type="file" name="photo" value="<?= $album ['serie_photo']; ?>" required /><br />
-        Distribution : <input type="text" name="distrib" value="<?= $album ['serie_distrib']; ?>" required /><br />
-        Auteur : <select name="auteur" required>
+        <div class="form_serie">Nom : <input class="input" type="text" name="nom" value="<?php echo $album['serie_nom']; ?>" required/><br /></div>
+        <div class="form_serie">Année : <input class="input" type="number" name="annee" min="1900" max="3000" value="<?= $album['serie_date']; ?>" required /><br /></div>
+        <div class="form_serie">Nombre de saison : <input class="input" type="number" name="saison" value="<?= $album['serie_saison']; ?>" required /><br /></div>
+        <div class="form_serie">Durée des épisodes (en min) : <input class="input" type="number" name="duree" value="<?= $album ['serie_duree']; ?>" required /><br /></div>
+        <div class="form_serie">Résumé : <textarea class="input" name="resume" required><?= $album['serie_resume']; ?></textarea><br /></div>
+        <div class="form_serie">Classification : <input class="input" type="number" name="pegi" value="<?= $album ['serie_pegi']; ?>" required /><br /></div>
+        <div class="form_serie">Photo : <input type="file" name="photo" required /><br /></div>
+        <div class="form_serie">Distribution : <input class="input" type="text" name="distrib" value="<?= $album ['serie_distrib']; ?>" required /><br /></div>
+        <div class="form_serie">Auteur : <select class="input" name="auteur" required>
 
         <?php
             $co=connexionBD();
             afficherAuteursOptionsSelectionne($co, $album['_real_id']);
             deconnexionBD($co);
         ?>
-        </select><br />
-        <input type="submit" value="Modifier" />
+        </select><br /></div>
+        <div class="submit"><input class="ajouter" type="submit" value="Modifier" /></div>
     </form>
+    
+<?php require('../footer.php'); ?>
 </body>
 </html>

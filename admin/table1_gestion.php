@@ -8,8 +8,8 @@
 <main>
     <section class="header">
         <h1>Gestion des Séries</h1>
+        <p style="margin-top: 100px;margin-bottom: 50px;"><a class="add" href="table1_new_form.php">Ajouter une série originale Netflix</a></p>
     </section>
-        <p><a href="table1_new_form.php">Ajouter une série originale Netflix</a></p>
         <?php
             require '../lib_crud.inc.php';
             $co=connexionBD();
@@ -17,5 +17,7 @@
             deconnexionBD($co);
         ?>
         </section>
+    
+<?php require('../footer.php'); ?>
     </body>
 </html>

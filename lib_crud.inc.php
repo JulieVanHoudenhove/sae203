@@ -69,7 +69,7 @@
             die();
         }
         echo '<table>'."\n";
-        echo '<thead><tr><th>Nom</th><th>Date</th><th>Saison</th><th>Durée</th><th>Photo</th><th>Résumé</th><th>Classification</th><th>Prénom réalisateur</th><th>Nom réalisateur</th><th>Distribution</th><th>Modifier</th><th>Supprimer</th></tr></thead>'."\n";
+        echo '<thead><tr><th>Nom</th><th>Date</th><th>Saison</th><th>Durée</th><th>Photo</th><th>Résumé</th><th>Classi-<br>fication</th><th>Distribution</th><th>Réalisateur</th><th>Modifier</th><th>Supprimer</th></tr></thead>'."\n";
         echo '<tbody>'."\n";
         foreach ($resultat as $value) {
             echo '<tr>'."\n";
@@ -155,7 +155,7 @@
             die();
         }
         if ($resultat->rowCount() == 1) {
-            echo '<p>La serie ' . $nom . ' a été ajoutée au catalogue.</p>' . "\n";
+            echo '<p  class="header" style="margin-top: 100px;margin-bottom: 50px;">La serie ' . $nom . ' a été ajoutée au catalogue.</p>' . "\n";
         } else {
             echo '<p>Erreur lors de l\'ajout.</p>' . "\n";
             die();
@@ -175,7 +175,7 @@
                 die();
             }
             if ($resultat->rowCount() == 1) {
-                echo '<p>Le réalisateur ' . $nom . ' a été ajoutée au catalogue.</p>' . "\n";
+                echo '<p  class="header" style="margin-top: 100px;margin-bottom: 50px;">Le réalisateur ' . $nom . ' a été ajoutée au catalogue.</p>' . "\n";
             } else {
                 echo '<p>Erreur lors de l\'ajout.</p>' . "\n";
                 die();
@@ -195,7 +195,7 @@
             die();
         }
         if ($resultat->rowCount()==1) {
-            echo '<p>La série '.$id.' a été supprimée du catalogue.</p>'."\n";
+            echo '<p  class="header" style="margin-top: 100px;margin-bottom: 50px;">La série '.$id.' a été supprimée du catalogue.</p>'."\n";
         } else {
             echo '<p>Erreur lors de la suppression.</p>'."\n";
             die();
@@ -214,7 +214,7 @@
                 die();
             }
             if ($resultat->rowCount()==1) {
-                echo '<p>Le réalisateur '.$id.' a été supprimé du catalogue.</p>'."\n";
+                echo '<p  class="header" style="margin-top: 100px;margin-bottom: 50px;">Le réalisateur '.$id.' a été supprimé du catalogue.</p>'."\n";
             } else {
                 echo '<p>Erreur lors de la suppression.</p>'."\n";
                 die();
@@ -266,7 +266,7 @@
         }
         foreach ($resultat as $value) {
             echo '<option value="'.$value['real_id'].'"';
-            if ($value['real_id']== $value['real_id']) {
+            if ($value['real_id']==$idAuteur) {
                 echo ' selected="selected"';
             }
             echo '>';
@@ -292,7 +292,7 @@
             die();
         }
         if ($resultat->rowCount() == 1) {
-            echo '<p>La série ' . $nom . ' a été modifiée.</p>' . "\n";
+            echo '<p class="header" style="margin-top: 100px;margin-bottom: 50px;">La série ' . $nom . ' a été modifiée.</p>' . "\n";
         } else {
             echo '<p>Erreur lors de la modification.</p>' . "\n";
             die();
@@ -316,11 +316,28 @@
             die();
         }
         if ($resultat->rowCount() == 1) {
-            echo '<p>Le réalisateur ' .$prenom. ' ' .$nom. ' a été modifié.</p>' . "\n";
+            echo '<p  class="header" style="margin-top: 100px;margin-bottom: 50px;">Le réalisateur ' .$prenom. ' ' .$nom. ' a été modifié.</p>' . "\n";
         } else {
             echo '<p>Erreur lors de la modification.</p>' . "\n";
             die();
         }
+    }
+
+    // Génération de la liste des auteurs dans le formulaire de recherche
+    function genererDatalistAuteurs($mabd) {
+        // on sélectionne le nom et prénom de tous les auteurs de la table auteurs
+        $req = "SELECT real_nom, real_prenom FROM realisateur";
+        try {
+            $resultat = $mabd->query($req);
+        } catch (PDOException $e) {
+            // s'il y a une erreur, on l'affiche
+            echo '<p>Erreur : ' . $e->getMessage() . '</p>';
+            die();
+        }
+        // pour chaque auteur, on met son nom et prénom dans une balise <option>
+        foreach ($resultat as $value) {
+            echo '<option value="'.$value['real_prenom']. ' '.$value['real_nom'].'">'; 
+        } 
     }
 
 

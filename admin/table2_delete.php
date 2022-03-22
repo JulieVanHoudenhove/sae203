@@ -18,5 +18,7 @@
 	        effaceBD2($co, $id);
 	        deconnexionBD($co);
 	    ?>
+	
+<?php require('../footer.php'); ?>
 	</body>
 </html>

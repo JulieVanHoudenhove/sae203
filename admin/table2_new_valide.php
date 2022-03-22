@@ -23,5 +23,7 @@
 	        ajouterRL($co, $nom, $prenom, $natio, $age);
 	        deconnexionBD($co);
 	    ?>
+		
+<?php require('../footer.php'); ?>
 	</body>
 </html>
