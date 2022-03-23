@@ -15,9 +15,9 @@
         <div class="list">
             <?php
             require('lib_crud.inc.php');
-            $mabd = connexionBD();
+            $mabd = connexionSerie();
             afficherCatalogue($mabd);
-            deconnexionBD($mabd);
+            deconnexionSerie($mabd);
             ?>
         </div>
     </section>

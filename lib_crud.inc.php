@@ -7,7 +7,7 @@
   require 'secretxyz123.inc.php';
 
   // connexion à la base de données
-  function connexionBD()
+  function connexionSerie()
   {
     // on initialise la variable de connexion à null
     $mabd = null;
@@ -50,14 +50,14 @@
             echo '<span>Durée par épisode :</span> environ '.$value['serie_duree'].'<br>';
             echo '<span>Acteurs principaux :</span> '.$value['serie_distrib'].'<br>';
             echo '<span>Réalisateur :</span> '.$value['real_prenom'].' '.$value['real_nom'].', '.$value['real_age'].' ans, '.$value['real_natio'].'<br>';
-            echo '<span>Résumé :</span> '.$value['serie_resume'].'<br>';
+            echo '<span id="'.$value['serie_id'].'">Résumé :</span> '.$value['serie_resume'].'<br>';
             echo '</p>';
             echo '</div>';
         }
     }
 
     // affichage de la liste des albums pour la gestion
-    function afficherListe($mabd) {
+    function afficherListeSerie($mabd) {
         $req = "SELECT * FROM serie 
                 INNER JOIN realisateur 
                 ON serie._real_id = realisateur.real_id";
@@ -93,7 +93,7 @@
 
 
         // affichage de la liste des albums pour la gestion
-        function afficherListe2($mabd) {
+        function afficherListeReal($mabd) {
             $req = "SELECT * FROM realisateur";
             try {
                 $resultat = $mabd->query($req);
@@ -122,7 +122,7 @@
     
 
     // afficher les auteurs (prénom et nom) dans des champs "option"
-    function afficherAuteursOptions($mabd) {
+    function afficherRealOptions($mabd) {
     	// on sélectionne tous les auteurs de la table auteurs
         $req = "SELECT * FROM realisateur";
         try {
@@ -142,7 +142,7 @@
     }
 
     // fonction d'ajout d'une BD dans la table bande_dessinees
-    function ajouterBD($co, $nom, $date, $saison, $duree, $resume, $pegi,
+    function ajouterSerie($co, $nom, $date, $saison, $duree, $resume, $pegi,
     $nouvelleImage, $distrib, $auteur)
     {
         $req = 'INSERT INTO serie (serie_nom, serie_date, serie_saison, serie_duree, serie_resume, serie_pegi, serie_photo, serie_distrib, _real_id) VALUES ("'.$nom.'", '.$date.','.$saison.', '.$duree.', "'.$resume.'", '.$pegi.' , "'.$nouvelleImage.'","'.$distrib.'", "'.$auteur.'" )';
@@ -163,7 +163,7 @@
     }
 
         // fonction d'ajout d'une BD dans la table bande_dessinees
-        function ajouterRL($co, $nom, $prenom, $natio, $age)
+        function ajouterReal($co, $nom, $prenom, $natio, $age)
         {
             $req = 'INSERT INTO realisateur (real_nom, real_prenom, real_natio, real_age) VALUES ("'.$nom.'", "'.$prenom.'","'.$natio.'", '.$age.')';
             //echo '<p>' . $req . '</p>' . "\n";
@@ -184,7 +184,7 @@
 
 
     // fonction d'effacement d'une BD
-    function effaceBD($mabd, $id) {
+    function effaceSerie($mabd, $id) {
         $req = 'DELETE FROM serie WHERE serie_id='.$id;
         //echo '<p>'.$req.'</p>'."\n";
         try{
@@ -203,7 +203,7 @@
     }
 
         // fonction d'effacement d'une BD
-        function effaceBD2($mabd, $id) {
+        function effaceReal($mabd, $id) {
             $req = 'DELETE FROM realisateur WHERE real_id='.$id;
             //echo '<p>'.$req.'</p>'."\n";
             try{
@@ -222,7 +222,7 @@
         }
 
     // fonction de récupération des informations d'une BD
-    function getBD($mabd, $idAlbum) {
+    function getSerie($mabd, $idAlbum) {
         $req = 'SELECT * FROM serie WHERE serie_id='.$idAlbum;
         //echo '<p>GetBD() : '.$req.'</p>'."\n";
         try {
@@ -238,7 +238,7 @@
     }
     
     // fonction de récupération des informations d'une BD
-    function getRL($mabd, $idAlbum) {
+    function getReal($mabd, $idAlbum) {
         $req = 'SELECT * FROM realisateur WHERE real_id='.$idAlbum;
         //echo '<p>GetRL() : '.$req.'</p>'."\n";
         try {
@@ -255,7 +255,7 @@
 
 	// afficher le "bon" auteur parmi les auteurs (prénom et nom)
    // dans les balises "<option>"
-	function afficherAuteursOptionsSelectionne($mabd, $idAuteur) {
+	function afficherRealOptionsSelectionne($mabd, $idReal) {
         $req = "SELECT * FROM realisateur";
         try {
             $resultat = $mabd->query($req);
@@ -266,7 +266,7 @@
         }
         foreach ($resultat as $value) {
             echo '<option value="'.$value['real_id'].'"';
-            if ($value['real_id']==$idAuteur) {
+            if ($value['real_id']==$idReal) {
                 echo ' selected="selected"';
             }
             echo '>';
@@ -276,7 +276,7 @@
     }
 
 	// fonction de modification d'une BD dans la table bande_dessinees
-    function modifierBD($mabd, $id, $nom, $date, $saison, $duree, $resume, $pegi, $nouvelleImage, $distrib, $auteur)
+    function modifierSerie($mabd, $id, $nom, $date, $saison, $duree, $resume, $pegi, $nouvelleImage, $distrib, $auteur)
     {
         $req = 'UPDATE serie 
                 SET 
@@ -300,7 +300,7 @@
     }
 
     // fonction de modification d'une BD dans la table bande_dessinees
-    function modifierRL($mabd, $id, $nom, $prenom, $natio, $age)
+    function modifierReal($mabd, $id, $nom, $prenom, $natio, $age)
     {
         $req = 'UPDATE realisateur 
                 SET 
@@ -324,7 +324,7 @@
     }
 
     // Génération de la liste des auteurs dans le formulaire de recherche
-    function genererDatalistAuteurs($mabd) {
+    function genererDatalistReal($mabd) {
         // on sélectionne le nom et prénom de tous les auteurs de la table auteurs
         $req = "SELECT real_nom, real_prenom FROM realisateur";
         try {
@@ -351,7 +351,7 @@
                 real_nom LIKE '%".$t[1]."%' OR
                 real_prenom LIKE '%".$t[0]."%' OR 
                 real_prenom LIKE '%".$t[1]."%'" ;
-                //echo '<p>'.$req.'</p>';
+                echo '<div class="resultrecherche"><p>Votre recherche : </p><p><strong>'.$_POST['real'].'</strong></p></div>';
         try {
             $resultat = $mabd->query($req);
         } catch (PDOException $e) {
@@ -381,7 +381,7 @@
                     INNER JOIN realisateur
                     ON serie._real_id = realisateur.real_id
                     WHERE serie_duree BETWEEN ".$_POST['duree_mini']." AND ".$_POST['duree_maxi']."";
-                    //echo '<p>'.$req.'</p>';
+                    echo '<div class="resultrecherche"><p>Votre recherche : entre <strong>'.$_POST['duree_mini'].'</strong> min et </p><p><strong>'.$_POST['duree_maxi'].'</strong> min</p></div>';
             try {
                 $resultat = $mabd->query($req);
             } catch (PDOException $e) {
@@ -407,7 +407,7 @@
 
 
   // déconnexion de la base de données
-  function deconnexionBD(&$mabd) {
+  function deconnexionSerie(&$mabd) {
     // on se déconnexte en mettant la variable de connexion à null 
     $mabd=null;
   }

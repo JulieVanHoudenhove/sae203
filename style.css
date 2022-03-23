@@ -121,7 +121,7 @@ main {
     justify-content: space-evenly;
 }
 
-.list div {
+.list>.serie {
     max-width: 600px;
     height: 340px;
     border-radius: 15px;
@@ -224,6 +224,14 @@ main {
 .rechercher:hover {
     background-color: red !important;
     color: #fff !important;
+}
+
+.resultrecherche {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
 }
 
 

@@ -22,9 +22,9 @@
 	        <div class="form_serie">Auteur : <select class="input" name="auteur" required>
 	        <?php
 	            require '../lib_crud.inc.php';
-	            $co=connexionBD();
-	            afficherAuteursOptions($co);
-	            deconnexionBD($co);
+	            $co=connexionSerie();
+	            afficherRealOptions($co);
+	            deconnexionSerie($co);
 	        ?>
 	        </select><br /></div>
 	        <div class="submit"><input class="ajouter" type="submit" value="Ajouter" /></div>

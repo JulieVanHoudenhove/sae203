@@ -19,9 +19,9 @@
 	        //var_dump($_POST);
 	        //var_dump($_FILES);
 
-	        $co=connexionBD();
-	        ajouterRL($co, $nom, $prenom, $natio, $age);
-	        deconnexionBD($co);
+	        $co=connexionSerie();
+	        ajouterReal($co, $nom, $prenom, $natio, $age);
+	        deconnexionSerie($co);
 	    ?>
 		
 <?php require('../footer.php'); ?>

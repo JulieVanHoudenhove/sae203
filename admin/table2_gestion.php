@@ -12,9 +12,9 @@
     </section>
         <?php
             require '../lib_crud.inc.php';
-            $co=connexionBD();
-            afficherListe2($co);
-            deconnexionBD($co);
+            $co=connexionSerie();
+            afficherListeReal($co);
+            deconnexionSerie($co);
         ?>
         </section>
     

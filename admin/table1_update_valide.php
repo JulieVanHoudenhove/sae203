@@ -45,10 +45,10 @@
 	            die();
 	        }
 	
-	        $co=connexionBD();
-	        modifierBD($co, $id, $nom, $date, $saison, $duree, $resume, $pegi,
+	        $co=connexionSerie();
+	        modifierSerie($co, $id, $nom, $date, $saison, $duree, $resume, $pegi,
             $nouvelleImage, $distrib, $auteur);
-	        deconnexionBD($co);
+	        deconnexionSerie($co);
 	    ?>
 		
 <?php require('../footer.php'); ?>

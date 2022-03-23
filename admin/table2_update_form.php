@@ -13,10 +13,10 @@
         require '../lib_crud.inc.php';
 
         $id=$_GET['num'];
-        $co=connexionBD();
-        $album=getRL($co, $id);
+        $co=connexionSerie();
+        $album=getReal($co, $id);
         //var_dump($album);
-        deconnexionBD($co);
+        deconnexionSerie($co);
     ?>
     <form  class="add_serie" action="table2_update_valide.php" method="POST" enctype="multipart/form-data" >
         <input type="hidden" name="num" value="<?= $id; ?>" />

@@ -13,10 +13,10 @@
         require '../lib_crud.inc.php';
 
         $id=$_GET['num'];
-        $co=connexionBD();
-        $album=getBD($co, $id);
+        $co=connexionSerie();
+        $album=getSerie($co, $id);
         //var_dump($album);
-        deconnexionBD($co);
+        deconnexionSerie($co);
     ?>
     <form class="add_serie" action="table1_update_valide.php" method="POST" enctype="multipart/form-data" >
         <input type="hidden" name="num" value="<?= $id; ?>" />
@@ -31,9 +31,9 @@
         <div class="form_serie">Auteur : <select class="input" name="auteur" required>
 
         <?php
-            $co=connexionBD();
-            afficherAuteursOptionsSelectionne($co, $album['_real_id']);
-            deconnexionBD($co);
+            $co=connexionSerie();
+            afficherRealOptionsSelectionne($co, $album['_real_id']);
+            deconnexionSerie($co);
         ?>
         </select><br /></div>
         <div class="submit"><input class="ajouter" type="submit" value="Modifier" /></div>

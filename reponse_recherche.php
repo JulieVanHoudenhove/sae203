@@ -34,9 +34,9 @@
         <div class="list">
             <?php
                 require 'lib_crud.inc.php';
-                $co=connexionBD();
+                $co=connexionSerie();
                 afficherResultatRecherche($co);
-                deconnexionBD($co);
+                deconnexionSerie($co);
             ?>
         </div>
     </section>

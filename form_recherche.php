@@ -36,9 +36,9 @@
                 <?php
                 // On va afficher ici la datalist
                 require 'lib_crud.inc.php';
-                $co=connexionBD();
-                genererDatalistAuteurs($co);
-                deconnexionBD($co);
+                $co=connexionSerie();
+                genererDatalistReal($co);
+                deconnexionSerie($co);
                 ?>
             </datalist>
 

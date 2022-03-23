@@ -14,9 +14,9 @@
 	
 	        $id=$_GET['num'];
 	
-	        $co=connexionBD();
-	        effaceBD2($co, $id);
-	        deconnexionBD($co);
+	        $co=connexionSerie();
+	        effaceReal($co, $id);
+	        deconnexionSerie($co);
 	    ?>
 	
 <?php require('../footer.php'); ?>
