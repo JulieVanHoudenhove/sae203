@@ -9,7 +9,7 @@
 
 <main>
     <section class="header">
-    <h1>Voici le résultat de votre recherche</h1>
+    <h1>Que recherchez-vous ?</h1>
     <p>Trouvez votre bonheur</p> 
     </section>
     <section id="form">
