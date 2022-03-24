@@ -51,7 +51,7 @@ function afficherCatalogue($mabd)
         echo '<span>Nom :</span> ' . $value['serie_nom'] . '<br>';
         echo '<span>Date :</span> ' . $value['serie_date'] . '<br>';
         echo '<span>Nombre de saison :</span> ' . $value['serie_saison'] . '<br>';
-        echo '<span>Durée par épisode :</span> environ ' . $value['serie_duree'] . '<br>';
+        echo '<span>Durée par épisode :</span> environ ' . $value['serie_duree'] . ' minutes.<br>';
         echo '<span>Acteurs principaux :</span> ' . $value['serie_distrib'] . '<br>';
         echo '<span>Réalisateur :</span> ' . $value['real_prenom'] . ' ' . $value['real_nom'] . ', ' . $value['real_age'] . ' ans, ' . $value['real_natio'] . '<br>';
         echo '<span id="' . $value['serie_id'] . '">Résumé :</span> ' . $value['serie_resume'] . '<br>';
