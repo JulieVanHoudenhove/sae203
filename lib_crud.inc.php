@@ -46,7 +46,7 @@ function afficherCatalogue($mabd)
     }
     foreach ($resultat as $value) {
         echo '<div class="serie">';
-        echo '<img src="images/uploads/' . $value['serie_photo'] . '" alt="Affiche' . $value['serie_nom'] . '">';
+        echo '<img src="images/uploads/' . $value['serie_photo'] . '" alt="Affiche ' . $value['serie_nom'] . '">';
         echo '<p>';
         echo '<span>Nom :</span> ' . $value['serie_nom'] . '<br>';
         echo '<span>Date :</span> ' . $value['serie_date'] . '<br>';
@@ -89,7 +89,7 @@ function afficherListeSerie($mabd)
         echo '<td>' . $value['serie_distrib'] . '</td>' . "\n";
         echo '<td>' . $value['real_prenom'] . ' ' . $value['real_nom'] . '</td>' . "\n";
         echo '<td><a href="table1_update_form.php?num=' . $value['serie_id'] . '">Modifier</a></td>' . "\n";
-        echo '<td><a href="table1_delete.php?num=' . $value['serie_id'] . '">Supprimer</a></td>' . "\n";
+        echo '<td><a class="suppr" href="table1_delete.php?num=' . $value['serie_id'] . '">Supprimer</a></td>' . "\n";
         echo '</tr>' . "\n";
     }
     echo '</tbody>' . "\n";
@@ -119,7 +119,7 @@ function afficherListeReal($mabd)
         echo '<td>' . $value['real_natio'] . '</td>' . "\n";
         echo '<td>' . $value['real_age'] . '</td>' . "\n";
         echo '<td><a href="table2_update_form.php?num=' . $value['real_id'] . '">Modifier</a></td>' . "\n";
-        echo '<td><a href="table2_delete.php?num=' . $value['real_id'] . '">Supprimer</a></td>' . "\n";
+        echo '<td><a class="suppr" href="table2_delete.php?num=' . $value['real_id'] . '">Supprimer</a></td>' . "\n";
         echo '</tr>' . "\n";
     }
     echo '</tbody>' . "\n";
@@ -415,6 +415,38 @@ function afficherResultatRecherche1($mabd)
         die();
     }
 }
+
+// affichage des resultats de recherche
+function afficherResultatRecherche($mabd)
+{
+    $req = "SELECT * FROM serie
+                    INNER JOIN realisateur
+                    ON serie._real_id = realisateur.real_id
+                    WHERE serie_duree BETWEEN " . $_POST['duree_mini'] . " AND " . $_POST['duree_maxi'] . "";
+    echo '<div class="resultrecherche"><p>Votre recherche : entre </p><p><strong>' . $_POST['duree_mini'] . '</strong> min et <strong>' . $_POST['duree_maxi'] . '</strong> min</p></div>';
+    try {
+        $resultat = $mabd->query($req);
+    } catch (PDOException $e) {
+        // s'il y a une erreur, on l'affiche
+        echo '<p>Erreur : ' . $e->getMessage() . '</p>';
+        die();
+    }
+    foreach ($resultat as $value) {
+        echo '<div class="serie">';
+        echo '<img src="images/uploads/' . $value['serie_photo'] . '" alt="Affiche' . $value['serie_nom'] . '">';
+        echo '<p>';
+        echo '<span>Nom :</span> ' . $value['serie_nom'] . '<br>';
+        echo '<span>Date :</span> ' . $value['serie_date'] . '<br>';
+        echo '<span>Nombre de saison :</span> ' . $value['serie_saison'] . '<br>';
+        echo '<span>Durée par épisode :</span> environ ' . $value['serie_duree'] . '<br>';
+        echo '<span>Acteurs principaux :</span> ' . $value['serie_distrib'] . '<br>';
+        echo '<span>Réalisateur :</span> ' . $value['real_prenom'] . ' ' . $value['real_nom'] . ', ' . $value['real_age'] . ' ans, ' . $value['real_natio'] . '<br>';
+        echo '<span>Résumé :</span> ' . $value['serie_resume'] . '<br>';
+        echo '</p>';
+        echo '</div>';
+    }
+}
+
 
 // déconnexion de la base de données
 function deconnexionSerie(&$mabd)

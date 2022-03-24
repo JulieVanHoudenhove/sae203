@@ -28,6 +28,5 @@
 </main>
 
 <?php require('footer.php'); ?>
-<script src="index.js"></script>
 </body>
 </html>
