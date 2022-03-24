@@ -28,7 +28,7 @@
     ?>
     <section class="header">
     <h1>Voici le résultat de votre recherche</h1>
-    <p>Trouvez votre bonheur</p> 
+    <p>Vous avez trouvé votre bonheur ?</p> 
     </section>
     <section class="conteneur">
         <div class="list">
