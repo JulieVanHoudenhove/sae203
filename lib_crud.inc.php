@@ -431,6 +431,7 @@ function afficherResultatRecherche($mabd)
         echo '<p>Erreur : ' . $e->getMessage() . '</p>';
         die();
     }
+    if ($resultat->rowCount() != 0) {
     foreach ($resultat as $value) {
         echo '<div class="serie">';
         echo '<img src="images/uploads/' . $value['serie_photo'] . '" alt="Affiche' . $value['serie_nom'] . '">';
@@ -445,6 +446,10 @@ function afficherResultatRecherche($mabd)
         echo '</p>';
         echo '</div>';
     }
+} else {
+    echo '<p>Aucun résultat trouvé.</p>' . "\n";
+    die();
+}
 }
 
 
